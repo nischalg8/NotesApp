@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# VS Code & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Pytest and mypy cache
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+infra/.env
+
+# Logs
+logs/
+*.log
+
+# Docker
+docker-compose.override.yml
+*.pid
+
+# Database files
+*.sqlite3
+*.db
+
+# Alembic
+alembic/versions/*.pyc
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Node modules (if any frontend)
+node_modules/
+
+# Test output
+test-results/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ignore secrets
+secrets.*notesapp-image.tar

@@ -1,0 +1,8 @@
+-r base.txt
+pytest
+pre-commit
+black
+flake8
+isort
+pytest-asyncio
+httpx
