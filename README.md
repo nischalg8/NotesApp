@@ -52,7 +52,7 @@ cd notesapp
 
 ### 2⃣ Set Up `.env`
 
-Edit the `infra/.env` file:
+Create your own `infra/.env` file for database credentials:
 
 ```env
 POSTGRES_USER=youruser
