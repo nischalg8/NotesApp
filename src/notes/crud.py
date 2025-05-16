@@ -17,7 +17,7 @@ templates = Jinja2Templates(directory=TEMPLATES_DIR)
 async def read_notes(request: Request, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(Note))
     notes = result.scalars().all()
-    return templates.TemplateResponse("index.html", {"request": request, "notes": notes, "message": None, "error": None})
+    return templates.TemplateResponse(request, "index.html", {"notes": notes, "message": None, "error": None})
 
 @api_router.post("/notes")
 async def create_note(
@@ -41,7 +41,7 @@ async def create_note(
         error = "Note not added"
     result = await db.execute(select(Note))
     notes = result.scalars().all()
-    return templates.TemplateResponse("index.html", {"request": request, "notes": notes, "message": message, "error": error})
+    return templates.TemplateResponse(request, "index.html", {"notes": notes, "message": message, "error": error})
 
 @api_router.post("/notes/{note_id}")
 async def delete_note(
@@ -69,4 +69,4 @@ async def delete_note(
         error = "Invalid method"
     result = await db.execute(select(Note))
     notes = result.scalars().all()
-    return templates.TemplateResponse("index.html", {"request": request, "notes": notes, "message": message, "error": error})
+    return templates.TemplateResponse(request, "index.html", {"notes": notes, "message": message, "error": error})
