@@ -23,6 +23,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements/prod.txt
           pip install -r requirements/dev.txt
+      
+      - name: Export PostgreSQL secrets
+        run: |
+          echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
+          echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+          echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> $GITHUB_ENV
+          echo "ALEMBIC_DATABASE_URL=${{ secrets.ALEMBIC_DATABASE_URL }}" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
